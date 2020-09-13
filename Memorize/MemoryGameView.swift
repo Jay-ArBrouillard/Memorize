@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+//View
 struct MemoryGameView: View {
     @ObservedObject var gameVM: EmojiMemoryGame
     
@@ -17,6 +18,7 @@ struct MemoryGameView: View {
             CardView(card: card).onTapGesture {
                 self.gameVM.choose(card: card)
             }
+                .padding(5)
         }
             .padding([.horizontal])
             .foregroundColor(Color.orange)

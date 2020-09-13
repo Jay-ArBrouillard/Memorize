@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Model
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
     
@@ -24,17 +25,8 @@ struct MemoryGame<CardContent> {
     // MARK: - Choose a card
     mutating func choose(card: Card) {
         print("card choosen: \(card)")
-        let chosenIndex: Int = self.index(of: card)
+        let chosenIndex: Int = cards.firstIndex(matching: card)
         self.cards[chosenIndex].isFaceUp = !self.cards[chosenIndex].isFaceUp
-    }
-    
-    func index(of card: Card) -> Int {
-        for index in 0..<self.cards.count {
-            if self.cards[index].id == card.id {
-                return index
-            }
-        }
-        return -1 // TODO: shouldn't happen
     }
     
     // MARK: - Memory Game specific card

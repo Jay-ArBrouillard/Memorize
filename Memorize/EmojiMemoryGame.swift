@@ -8,11 +8,12 @@
 
 import Foundation
 
+//View Model
 class EmojiMemoryGame: ObservableObject {
     @Published private var game: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
         
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis: Array<String> = ["😂", "😏", "😈", "😀"]
+        let emojis: Array<String> = ["😂", "😏", "😈", "😀", "🤪", "🧐", "🤓"]
         return MemoryGame<String>(numPairsOfCards: emojis.count) { pairIndex in emojis[pairIndex] }
     }
     

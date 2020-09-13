@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A23E18EA250EB125002E5AF6 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E18E9250EB125002E5AF6 /* GridLayout.swift */; };
+		A23E18EE250EB563002E5AF6 /* ArrayIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E18ED250EB563002E5AF6 /* ArrayIdentifiable.swift */; };
 		A27C1683250D68E200D92476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C1682250D68E200D92476 /* AppDelegate.swift */; };
 		A27C1685250D68E200D92476 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C1684250D68E200D92476 /* SceneDelegate.swift */; };
 		A27C1687250D68E200D92476 /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C1686250D68E200D92476 /* MemoryGameView.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		A23E18E9250EB125002E5AF6 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		A23E18ED250EB563002E5AF6 /* ArrayIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIdentifiable.swift; sourceTree = "<group>"; };
 		A27C167F250D68E200D92476 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27C1682250D68E200D92476 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A27C1684250D68E200D92476 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		A27C1681250D68E200D92476 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				A23E18ED250EB563002E5AF6 /* ArrayIdentifiable.swift */,
 				A27C1682250D68E200D92476 /* AppDelegate.swift */,
 				A27C1684250D68E200D92476 /* SceneDelegate.swift */,
 				A23E18E9250EB125002E5AF6 /* GridLayout.swift */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27C1683250D68E200D92476 /* AppDelegate.swift in Sources */,
+				A23E18EE250EB563002E5AF6 /* ArrayIdentifiable.swift in Sources */,
 				A27C1685250D68E200D92476 /* SceneDelegate.swift in Sources */,
 				A27C1697250D7EF700D92476 /* MemoryGame.swift in Sources */,
 				A27C1687250D68E200D92476 /* MemoryGameView.swift in Sources */,
