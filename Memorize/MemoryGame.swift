@@ -18,15 +18,26 @@ struct MemoryGame<CardContent> {
             cards.append(Card(pairIndex: index*2, content: content))
             cards.append(Card(pairIndex: index*2+1, content: content))
         }
+        cards = cards.shuffled()
     }
     
-    // Choose a card
-    func choose(card: Card) {
+    // MARK: - Choose a card
+    mutating func choose(card: Card) {
         print("card choosen: \(card)")
-        
+        let chosenIndex: Int = self.index(of: card)
+        self.cards[chosenIndex].isFaceUp = !self.cards[chosenIndex].isFaceUp
     }
     
-    //Memory Game specific card
+    func index(of card: Card) -> Int {
+        for index in 0..<self.cards.count {
+            if self.cards[index].id == card.id {
+                return index
+            }
+        }
+        return -1 // TODO: shouldn't happen
+    }
+    
+    // MARK: - Memory Game specific card
     struct Card: Identifiable {
         var id: Int
         var isFaceUp: Bool

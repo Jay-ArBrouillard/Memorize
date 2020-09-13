@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MemoryGameView.swift
 //  Memorize
 //
 //  Created by Jay-Ar Brouillard on 9/12/20.
@@ -8,18 +8,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var gameVM: EmojiMemoryGame
+struct MemoryGameView: View {
+    @ObservedObject var gameVM: EmojiMemoryGame
     
+    // Our view is always reflecting what is in our model
     var body: some View {
-        HStack {
-            ForEach(gameVM.cards) { card in
-                CardView(card: card)
+        VStack(spacing: 0) {
+            HStack {
+                ForEach(self.gameVM.cards) { card in
+                    CardView(card: card)
+                        .aspectRatio(2/3, contentMode: .fit)
+                        .onTapGesture {
+                        self.gameVM.choose(card: card)
+                    }
+                }
             }
+                .padding([.horizontal])
+                .foregroundColor(Color.orange)
+                .font(Font.largeTitle)
+            Spacer()
         }
-            .padding()
-            .foregroundColor(Color.orange)
-            .font(Font.largeTitle)
     }
 }
 
@@ -44,6 +52,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(gameVM: EmojiMemoryGame())
+        MemoryGameView(gameVM: EmojiMemoryGame())
     }
 }
