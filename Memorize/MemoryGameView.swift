@@ -20,7 +20,7 @@ struct MemoryGameView: View {
             }
                 .padding(5)
         }
-            .padding([.horizontal])
+            .padding()
             .foregroundColor(Color.orange)
     }
     
@@ -40,23 +40,33 @@ struct CardView: View {
             if self.card.isFaceUp {
                 RoundedRectangle(cornerRadius: RECTANGLE_CORNER_RADIUS).fill(Color.white)
                 RoundedRectangle(cornerRadius: RECTANGLE_CORNER_RADIUS).stroke(lineWidth: LINE_WIDTH)
+                Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(110-90), clockwise: true)
+                    .padding(5)
+                    .opacity(0.4)
                 Text(self.card.content)
             } else {
-                RoundedRectangle(cornerRadius: RECTANGLE_CORNER_RADIUS)
+                if !card.isMatched {
+                    RoundedRectangle(cornerRadius: RECTANGLE_CORNER_RADIUS)
                     .fill()
+                }
             }
         }
-        .font(Font.system(size: min(size.width, size.height) * FONT_SCALE_FACTOR))
+        .font(Font.system(size: fontSize(for: size)))
     }
 
     // MARK: - Drawing Constants
     let RECTANGLE_CORNER_RADIUS: CGFloat = 10.0
     let LINE_WIDTH: CGFloat = 3.0
-    let FONT_SCALE_FACTOR: CGFloat = 0.75
+    private func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * 0.70
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryGameView(gameVM: EmojiMemoryGame())
+        let game = EmojiMemoryGame()
+        game.choose(card: game.cards[0])
+        return MemoryGameView(gameVM: game)
     }
 }
